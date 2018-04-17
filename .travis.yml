@@ -10,9 +10,6 @@ env:
 
 before_script:
   - composer require symfony/symfony:${SYMFONY_VERSION}
-  - vendor/symfony-cmf/testing/bin/travis/phpcr_odm_doctrine_dbtral.sh
-
-script: phpunit --coverage-text
 
 notifications:
   email: "mysterandco@gmail.com"
