@@ -13,45 +13,52 @@ Cornette Gauthier aka Yodark - Un étudiant en 5ème année au sein de
 
 <h2 style="color: darkgray;">Guide étape 1 - Installation du projet</h2>
 
+Installation de git flow
 ```bash
     sudo apt-get install git-flow
 ```
+Création du projet avec Symfony CLI
 ```bash
     symfony new web_indus 3.4
 ```
 ```bash
     cd web_indus
 ```
+Installation des vendors
 ```bash
     composer install
 ```
+Initialisation de git flow
 ```bash
     git flow init
 ```
+Vide le cache de Symfony
 ```bash
     sf3 cache:clear
 ```
+Execution du serveur web local
 ```bash
     sf3 server:run
 ```
-<h2 style="color: darkgray;">Guide étape 2 - Initialisation git du projet</h2>
+<h2 style="color: darkgray;">Guide étape 2 - Feature git flow</h2>
 
+Nouvelle feature
 ```bash
-    git remote add origin git@github.com:Y0D4RK/web_in_dus.git 
+    git flow feature start readme_add 
 ```
 ```bash
-    git add .
+    nano readme.md 
 ```
+Cloture la feature
 ```bash
-    git commit -m "Repo init"
+    git flow feature finish readme_add
 ```
-```bash
-    git checkout master
-```
-```bash
-    git pull origin master
-```
-```bash
-    git push origin master
-```
+<h2 style="color: darkgray;">Guide étape 2 - Release git flow</h2>
 
+Nouvelle release
+```bash
+    git flow release start 1.0
+```
+```bash
+    git flow release finish 1.0
+```
