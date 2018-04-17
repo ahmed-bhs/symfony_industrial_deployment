@@ -73,3 +73,13 @@ Publication de la release sur github
 ```bash
     git push origin master
 ```
+<h2 style="color: darkgray;">Guide étape 2 - Hotfix git flow</h2>
+
+Nouvelle hotfix
+```bash
+    git flow hotfix start v1.1
+```
+Cloture de la hotfix
+```bash
+    git flow hotfix finish v1.1
+```
