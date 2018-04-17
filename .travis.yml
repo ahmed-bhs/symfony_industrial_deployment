@@ -3,3 +3,27 @@ language: php
 php:
   - 7.0
   - 7.1
+
+env:
+  - SYMFONY_VERSION=3.4.8
+  - SYMFONY_VERSION=dev-master
+
+before_script:
+  - composer require symfony/symfony:${SYMFONY_VERSION}
+
+script: phpunit --coverage-text
+
+notifications:
+  email: "mysterandco@gmail.com"
+
+matrix:
+  allow_failures:
+    - env: SYMFONY_VERSION=dev-master
+
+#deploy:
+#  provider: pages
+#  skip-cleanup: true
+#  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+#  keep-history: true
+#  on:
+#    branch: master
