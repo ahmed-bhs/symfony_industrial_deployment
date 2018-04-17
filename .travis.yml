@@ -26,7 +26,7 @@ matrix:
 
 # Define an environment variable
 env:
-  - SYMFONY_VERSION="3.0.*" DB=mysql
+  - SYMFONY_VERSION="3.4.*" DB=mysql
 
 # Update composer
 before-install:
