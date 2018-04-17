@@ -1,29 +1,51 @@
+# Project language
 language: php
 
-php:
-  - 7.0
-  - 7.1
+# Allows use container-based infrastructure
+sudo: false
 
-env:
-  - SYMFONY_VERSION=3.4.8
-  - SYMFONY_VERSION=dev-master
+# Start mysql service
+services:
+  - mysql
 
-before_script:
-  - composer require symfony/symfony:${SYMFONY_VERSION}
+# Cache composer packages so "composer install" is faster
+cache:
+  directories:
+    - $HOME/.composer/cache/files
 
-script: phpunit --coverage-text
-
-notifications:
-  email: "mysterandco@gmail.com"
-
+# Matrix to test in every php version
 matrix:
+  # Fast finish allows to set the build as "finished" even if the "allow_failures" matrix elements are not finished yet.
+  fast_finish: true
+  include:
+    - php: 5.5
+    - php: 5.6
+    - php: 7.0
+    - php: hhvm
   allow_failures:
-    - env: SYMFONY_VERSION=dev-master
+    - php: hhvm
 
-#deploy:
-#  provider: pages
-#  skip-cleanup: true
-#  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
-#  keep-history: true
-#  on:
-#    branch: master
+# Define an environment variable
+env:
+  - SYMFONY_VERSION="3.0.*" DB=mysql
+
+# Update composer
+before-install:
+  - composer self-update
+
+# Install composer dependencies,
+# Create database, schema and fixtures
+install:
+  - composer install
+  - cp app/config/parameters.yml.dist app/config/parameters.yml
+  - php bin/console doctrine:database:create --env=test
+  - php bin/console doctrine:schema:create --env=test
+  - php bin/console doctrine:fixtures:load -n --env=test
+
+# Run script
+script:
+  - phpunit
+
+# After a build, send email notification with the build results
+notifications:
+  email: your_email
