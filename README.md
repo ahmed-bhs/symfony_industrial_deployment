@@ -51,6 +51,9 @@ Nouvelle feature
 ```
 Cloture la feature
 ```bash
+    git commit -m "README.md updated"
+```
+```bash
     git flow feature finish readme_add
 ```
 <h2 style="color: darkgray;">Guide étape 2 - Release git flow</h2>
@@ -59,6 +62,14 @@ Nouvelle release
 ```bash
     git flow release start 1.0
 ```
+Cloture la release
 ```bash
     git flow release finish 1.0
+```
+Publication de la release sur github
+```bash
+    git push --tags v1.0
+```
+```bash
+    git push origin master
 ```
