@@ -93,7 +93,15 @@ Cloture de la hotfix
 Capistrano est un outil d'automatisation de déploiement sur serveurs distants.
 Il est capable d'executer des taches arbitraires et inclut un ensemble de flux de travail de déploiement par défault.
 
-Les fichiers de configurations se trouvent dans le dossier "./config/"
+Les fichiers de configurations de capistrano se trouvent dans le dossier *./config/* et *./config/deploy/*. Au sein de ses dossiers nous avons un fichier deploy.rb et un fichier production.rb (Ruby) qui contient les différents paramètres nécessaire au déploiement. (A ajouter au gitignore - Google Dork).
 
-Au sein de se dossier nous avons un fichier deploy.rb (Ruby) qui contient les différents paramètre nécessaire au déploiement. (A ajouter au gitignore - Google Dork).
+Nous avons également un fichier Gemfile et Capfile qui contiennent des dépendances nécessaires au déploiement d'un projet Symfony.
 
+Installer les dépendances du Gemfile
+```bash
+    bundle install
+```
+Déployer le projet sur le serveur distant
+```bash
+    cap production deploy
+```
