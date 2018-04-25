@@ -44,7 +44,7 @@ Execution du serveur web local
 ```bash
     sf3 server:run
 ```
-<h2 style="color: darkgray;">Guide étape 2 - Feature git flow</h2>
+<h2 style="color: darkgray;">Guide étape 3 - Feature git flow</h2>
 
 Nouvelle feature
 ```bash
@@ -60,7 +60,7 @@ Cloture la feature
 ```bash
     git flow feature finish readme_add
 ```
-<h2 style="color: darkgray;">Guide étape 2 - Release git flow</h2>
+<h2 style="color: darkgray;">Guide étape 4 - Release git flow</h2>
 
 Nouvelle release
 ```bash
@@ -77,7 +77,7 @@ Publication de la release sur github
 ```bash
     git push origin master
 ```
-<h2 style="color: darkgray;">Guide étape 2 - Hotfix git flow</h2>
+<h2 style="color: darkgray;">Guide étape 5 - Hotfix git flow</h2>
 
 Nouvelle hotfix
 ```bash
@@ -87,3 +87,13 @@ Cloture de la hotfix
 ```bash
     git flow hotfix finish v1.1
 ```
+
+[<h2 style="color: darkgray;">Guide étape 6 - Capistrano</h2>](http://capistranorb.com/)
+
+Capistrano est un outil d'automatisation de déploiement sur serveurs distants.
+Il est capable d'executer des taches arbitraires et inclut un ensemble de flux de travail de déploiement par défault.
+
+Les fichiers de configurations se trouvent dans le dossier "./config/"
+
+Au sein de se dossier nous avons un fichier deploy.rb (Ruby) qui contient les différents paramètre nécessaire au déploiement. (A ajouter au gitignore - Google Dork).
+
