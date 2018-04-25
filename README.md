@@ -1,5 +1,7 @@
 # <span style="color: darkgray;">Industrialisation du Web</span>
 
+[![Build Status](https://travis-ci.org/Y0D4RK/web_in_dus.svg?branch=v2.0)](https://travis-ci.org/Y0D4RK/web_in_dus)
+
 <em style="">--------</em>
 <em style="">| <strong>Projet&nbsp;sous&nbsp;Symfony&nbsp;3.4.8&nbsp;&nbsp;&nbsp;</strong>|</em>
 <em style="">--------</em>
